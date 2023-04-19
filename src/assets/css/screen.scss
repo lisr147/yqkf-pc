@@ -1,0 +1,206 @@
+@font-face {
+  font-family: BeBas;
+  src: url('../font/BEBAS.ttf');
+}
+
+/*加载时遮罩层*/
+.loading-mask{
+  background-color: rgba(0,0,0,0.4);
+}
+
+.esri-ui .esri-attribution{
+  display: none !important;
+}
+
+.screen-wrap{
+  //常规按钮
+  .btn{
+    display: inline-block;
+    margin: 0 0.7em;
+    width: 110px;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(180deg, #0F2560 0%, #1C49B8 100%);
+    box-shadow: 0px 0px 5px 0px #11245E, inset 0px 0px 5px 0px #2B5FF6;
+    border: 1px solid #2B5FF6;
+
+    &:hover{
+      background: linear-gradient(180deg, #153384 0%, #2157db 100%);
+    }
+
+    &.primary{
+      background: linear-gradient(180deg, #0F5E0D 0%, #1DBD1A 100%);
+      box-shadow: 0px 0px 5px 0px #11245E, inset 0px 0px 5px 0px #17A514;
+      border: 1px solid #17A514;
+    }
+    &.danger{
+      background: linear-gradient(180deg, #560B0F 0%, #B91920 100%);
+      box-shadow: 0px 0px 5px 0px #11245E, inset 0px 0px 5px 0px #F42A34;
+      border: 1px solid #F42A34;
+    }
+  }
+
+  .el-tabs{
+    &__item{
+      color: #fff;
+    }
+    .is-active{
+      background-color:#3D60AC;
+    }
+  }
+
+  //表单
+  .el-form{
+
+    &-item{
+      &__label{
+        color: #fff;
+      }
+    }
+
+  }
+  .el-input{
+    &__inner{
+      color: #fff;
+      border: 1px solid #3D60AC;
+      background-color: #3D60AC;
+    }
+    &__count{
+      color: #fff;
+      background-color: #3D60AC;
+    }
+    &-group__append{
+      color: #fff;
+      background-color: #3D60AC;
+      border-color: transparent;
+    }
+  }
+  .el-textarea{
+    &__inner{
+      color: #fff;
+      border: 1px solid #3D60AC;
+      background-color: #3D60AC;
+    }
+  }
+
+  /*滚动条样式*/
+  .iscroll {
+    overflow: auto;
+  }
+
+  .iscroll::-webkit-scrollbar,
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .iscroll::-webkit-scrollbar-thumb,
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(3, 72, 152, 1);
+  }
+
+  .iscroll::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background: rgb(15, 37, 95);
+  }
+
+
+  /*弹窗*/
+  .detail_list {
+    height: calc(100% + 30px);
+    overflow: hidden;
+
+    .title_type{
+      display:inline-block;
+      padding: 1px 0.6em;
+      color: #fff;
+      background-color: #e8a021;
+      border-radius: 10px;
+    }
+  }
+  .detail_panel {
+    position: fixed;
+  }
+  .el-inner-dialog {
+    .el-dialog {
+      margin: -85px auto !important;
+    }
+  }
+  .el-dialog {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 11vh;
+    margin: 0 auto !important;
+    border: 14px solid transparent !important;
+    border-image: url("~@/assets/image/dialog-bg.png") 14 !important;
+    background-color: transparent;
+    box-shadow: none;
+    color: #fff;
+
+    &__header{
+      padding: 0px 10px 8px;
+      border-bottom:2px solid #364f9a;
+      background-color:rgba(32,50,111,0.95);
+      color: #fff;
+      margin: -1px;
+      p {
+        color: #fff;
+        display: inline-block;
+        margin: 0 4px;
+      }
+    }
+    &__headerbtn{
+      top: 4px;
+      right: 10px;
+      .el-dialog__close{
+        color: #fff;
+      }
+    }
+    &__body{
+      padding: 10px 10px;
+      //margin: -1px;
+      background-color:rgba(32,50,111,0.95);
+    }
+    &__title{
+      font-size: 16px;
+      color: #fff;
+
+    }
+  }
+  .el-dialog__wrapper {
+    width: 1px !important;
+    height: 1px !important;
+  }
+
+  .screen-dialog{
+    height: auto;
+    .el-dialog__body{
+      max-height: 70vh;
+      overflow: auto;
+    }
+  }
+
+}
+
+.screen-popover{
+  background-color: #0F2560;
+  border: 1px solid #1f76e9;
+  color: #fff;
+  p{
+    margin-bottom: 0.5em;
+    color: #fff;
+  }
+
+  .popper__arrow{
+    border-bottom-color: #0F2560 !important;
+  }
+}
+

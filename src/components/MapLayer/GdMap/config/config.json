@@ -1,0 +1,18 @@
+{
+    "instance": null,
+    "container": null,
+    "AMap": null,
+    "conf": {
+        "center": [117.744559, 20.119604],
+        "resizeEnable": true,
+        "zooms": [3, 20],
+        "viewMode": "2D",
+        "defaultCursor": "default",
+        "pitch": 75,
+        "mapStyle": "amap://styles/8f6e4fd8e511a83e01e44eb560fa30c5",
+        "expandZoomRange": true,
+        "rotation": 0,
+        "zoom": 6,
+        "limitZoom": 12
+    }
+}

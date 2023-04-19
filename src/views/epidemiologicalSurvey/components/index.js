@@ -1,0 +1,9 @@
+export { default as BaseInfo } from "./baseInfo";
+export { default as CoreLocus } from "./coreLocus";
+export { default as VaccinationStatus } from "./vaccinationStatus";
+export { default as NucleicAcidStatus } from "./nucleicAcidStatus";
+export { default as Other } from "./other";
+export { default as FindDuplicateDialog } from "./findDuplicateDialog";
+export { default as KeyPlaceDialog } from "./keyPlaceDialog";
+export { default as ScanRecord } from './scanRecord';
+export { default as RelationMember } from './relationMember';

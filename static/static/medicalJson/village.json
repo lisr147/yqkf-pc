@@ -1,0 +1,418 @@
+{
+  "data": {
+    "outpatient": [
+      [
+        {
+          "name": "医院总数",
+          "value": 1,
+          "unit": "个"
+        },
+        {
+          "name": "科室总数",
+          "value": 140,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "发热门诊数",
+          "value": 1,
+          "unit": "个"
+        },
+        {
+          "name": "儿科门诊数",
+          "value": 4,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "产科门诊数",
+          "value": 2,
+          "unit": "个"
+        },
+        {
+          "name": "急诊门诊数",
+          "value": 1,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "其他门诊数",
+          "value": 132,
+          "unit": "个"
+        }
+      ]
+    ],
+    "register": [
+      [
+        {
+          "name": "挂号总数",
+          "value": 6,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "发热门诊挂号数",
+          "value": 2,
+          "unit": "个"
+        },
+        {
+          "name": "儿科门诊挂号数",
+          "value": 0,
+          "unit": "个"
+        },
+        {
+          "name": "产科门诊挂号数",
+          "value": 0,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "急诊门诊挂号数",
+          "value": 2,
+          "unit": "个"
+        },
+        {
+          "name": "其他门诊挂号数",
+          "value": 2,
+          "unit": "个"
+        },
+        { }
+      ]
+    ],
+    "wait": [
+      [
+        {
+          "name": "候诊总数",
+          "value": 166,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "发热门候诊号数",
+          "value": 1,
+          "unit": "个"
+        },
+        {
+          "name": "儿科门候诊号数",
+          "value": 20,
+          "unit": "个"
+        },
+        {
+          "name": "产科门候诊号数",
+          "value": 28,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "急诊门候诊号数",
+          "value": 1,
+          "unit": "个"
+        },
+        {
+          "name": "其他门候诊号数",
+          "value": 116,
+          "unit": "个"
+        },
+        { }
+      ]
+    ],
+    "consult": [
+      [
+        {
+          "name": "就诊总数",
+          "value": 6,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "发热门就诊号数",
+          "value": 2,
+          "unit": "个"
+        },
+        {
+          "name": "儿科门就诊号数",
+          "value": 0,
+          "unit": "个"
+        },
+        {
+          "name": "产科门就诊号数",
+          "value": 0,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "急诊门就诊号数",
+          "value": 2,
+          "unit": "个"
+        },
+        {
+          "name": "其他门就诊号数",
+          "value": 2,
+          "unit": "个"
+        },
+        { }
+      ]
+    ],
+    "covid": [
+      [
+        {
+          "name": "发热门诊阳性确诊人员数",
+          "value": 0,
+          "unit": "人"
+        }
+      ]
+    ],
+    "inHospital": [
+      [
+        {
+          "name": "在院人数",
+          "value": 67,
+          "unit": "人"
+        },
+        {
+          "name": "出院人数",
+          "value": 0,
+          "unit": "人"
+        }
+      ],
+      [
+        {
+          "name": "ICU床位数",
+          "value": 0,
+          "unit": "人"
+        },
+        {
+          "name": "空床位数",
+          "value": 628,
+          "unit": "人"
+        }
+      ]
+    ],
+    "special": [
+      [
+        {
+          "name": "特殊人群总数",
+          "value": 19,
+          "unit": "人"
+        }
+      ]
+    ],
+    "place": [
+      [
+        {
+          "name": "特殊场所总数",
+          "value": 2,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "昨日扫码总数",
+          "value": 66,
+          "unit": "次"
+        }
+      ],
+      [
+        {
+          "name": "公安司法监管场所",
+          "value": 0,
+          "unit": "个"
+        },
+        {
+          "name": "福利机构",
+          "value": 1,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "养老机构",
+          "value": 0,
+          "unit": "个"
+        },
+        {
+          "name": "救助管理机构",
+          "value": 0,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "精神卫生机构",
+          "value": 0,
+          "unit": "个"
+        },
+        {
+          "name": "母婴保健机构",
+          "value": 1,
+          "unit": "个"
+        }
+      ],
+      [
+        {
+          "name": "宗教活动场所",
+          "value": 0,
+          "unit": "个"
+        },
+        {
+          "name": "康复机构",
+          "value": 0,
+          "unit": "个"
+        }
+      ]
+    ],
+    "medical": [
+      [
+        {
+          "name": "医疗人员总数",
+          "value": 443,
+          "unit": "人"
+        }
+      ]
+    ],
+    "material": [
+      [
+        {
+          "name": "涉新冠治疗药品",
+          "value": 32,
+          "unit": "种"
+        },
+        {
+          "name": "涉新冠治疗药品库存",
+          "value": 1733,
+          "unit": "份"
+        }
+      ],
+      [
+        {
+          "name": "医用口罩",
+          "value": 23679,
+          "unit": "个"
+        },
+        {
+          "name": "防护服",
+          "value": 3901,
+          "unit": "套"
+        }
+      ],
+      [
+        {
+          "name": "防护面具",
+          "value": 6047,
+          "unit": "个"
+        },
+        {
+          "name": "防护眼镜",
+          "value": 874,
+          "unit": "个"
+        }
+      ]
+    ],
+    "car": [
+      [
+        {
+          "name": "负压车",
+          "value": 4,
+          "unit": "辆"
+        },
+        {
+          "name": "救护车",
+          "value": 3,
+          "unit": "辆"
+        }
+      ]
+    ],
+    "vaccine": [
+      [
+        {
+          "name": "累计接种",
+          "value": 251.2,
+          "unit": "万剂次"
+        }
+      ],
+      [
+        {
+          "name": "全程免疫接种数",
+          "value": 61.5,
+          "unit": "人"
+        },
+        {
+          "name": "全程免疫接种率",
+          "value": 107.5,
+          "unit": "%"
+        }
+      ]
+    ],
+    "old": [
+      [
+        {
+          "name": "60以上人群全程免疫接种数",
+          "value": 7.9,
+          "unit": "人"
+        },
+        {
+          "name": "60以上人群全程免疫接种率",
+          "value": 85.9,
+          "unit": "%"
+        }
+      ]
+    ],
+    "medicalChart": {
+      "id": 7713038,
+      "itemType": "PIE",
+      "panelItemData": {
+        "data": null,
+        "optionData": {
+          "series": [
+            {
+              "data": [
+                {
+                  "name": "儿科医生人数",
+                  "value": 3,
+                  "unit": "人"
+                },
+                {
+                  "name": "儿科护士人数",
+                  "value": 8,
+                  "unit": "人"
+                },
+                {
+                  "name": "产科医生人数",
+                  "value": 3,
+                  "unit": "人"
+                },
+                {
+                  "name": "产科护士人数",
+                  "value": 11,
+                  "unit": "人"
+                },
+                {
+                  "name": "老年科医生人数",
+                  "value": 1,
+                  "unit": "人"
+                },
+                {
+                  "name": "老年科护士人数",
+                  "value": 2,
+                  "unit": "人"
+                }
+              ],
+              "type": "pie"
+            }
+          ]
+        }
+      },
+      "optionData": "",
+      "code": "medicalChart"
+    }
+  }
+}

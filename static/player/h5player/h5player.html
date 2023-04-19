@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>海康播放器</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <style>
+        html,body{margin: 0;padding:0;overflow: hidden;}
+        .player-wrap {
+            position: relative;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .player-wrap .player {
+            position: relative;
+            z-index: 1;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
+</head>
+<body>
+<div class="player-wrap">
+    <div class="player" id="player"></div>
+</div>
+
+<script type="text/javascript" src="./h5player.min.js"></script>
+<script>
+  window.onload = function () {
+    let params = getParams()
+    params.index = Number(params.index)
+    console.log(20, params)
+
+    let player = null
+    let mode = 0
+
+    init();
+
+    // 播放
+    function play(newUrl) {
+      console.log(27, player)
+      let { url } = params,
+          index = player.currentWindowIndex || 0,
+          playURL = newUrl || url
+
+      player.JS_Play(playURL, { playURL, mode }, index).then(
+          () => {
+            console.log('realplay success')
+          },
+          e => {
+            console.error('play', e)
+          }
+      )
+    }
+    // 停止播放
+    function stopPlay() {
+      player.JS_Stop(player.currentWindowIndex).then(
+          () => { console.log('stop realplay success') },
+          e => {
+            console.error('stopPlay', e)
+          }
+      )
+    }
+
+    async function init() {
+      await initAddEvent()
+      await createPlayer()
+      await play()
+    }
+
+    function initAddEvent() {
+      // 设置播放容器的宽高并监听窗口大小变化
+      window.addEventListener('resize', () => {
+        player.JS_Resize()
+      })
+    }
+
+    function createPlayer() {
+      player = new window.JSPlugin({
+        szId: `player`,
+        szBasePath: `${params.BASE_URL}/player/h5player/`,
+        iMaxSplit: 1,
+        iCurrentSplit: this.isMobile ? 1 : 2,
+        openDebug: true,
+        oStyle: {
+          borderSelect: "#000",
+        }
+      })
+
+      // 事件回调绑定
+      player.JS_SetWindowControlCallback({
+        windowEventSelect: function (iWndIndex) {  //插件选中窗口回调
+          console.log('windowSelect callback: ', iWndIndex);
+        },
+        pluginErrorHandler: (iWndIndex, iErrorCode, oError) => {  //插件错误回调
+          console.log('pluginError callback: ', iWndIndex, iErrorCode, oError);
+        },
+        windowEventOver: function (iWndIndex) {  //鼠标移过回调
+          //console.log(iWndIndex);
+        },
+        windowEventOut: function (iWndIndex) {  //鼠标移出回调
+          //console.log(iWndIndex);
+        },
+        windowEventUp: function (iWndIndex) {  //鼠标mouseup事件回调
+          //console.log(iWndIndex);
+        },
+        windowFullCcreenChange: function (bFull) {  //全屏切换回调
+          console.log('fullScreen callback: ', bFull);
+        },
+        firstFrameDisplay: function (iWndIndex, iWidth, iHeight) {  //首帧显示回调
+          console.log('firstFrame loaded callback: ', iWndIndex, iWidth, iHeight);
+        },
+        performanceLack: function () {  //性能不足回调
+          console.log('performanceLack callback: ');
+        }
+      });
+    }
+
+    function getParams() {
+      let arr = location.search.substring(1).split(/\&/ig)
+      let res = {}
+      arr.forEach(item => {
+        let info = item.split('=')
+        res[info[0]] = info.slice(1, info.length).join('=') || null
+      })
+      return res
+    }
+  }
+</script>
+</body>
+</html>

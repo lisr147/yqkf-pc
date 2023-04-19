@@ -1,0 +1,71 @@
+variables:
+  # 构建发布群webhook
+  BUILD_PUBLISH_GRUOP_HOOK: "https://oapi.dingtalk.com/robot/send?access_token=e90d29eadc0ba2fb3f21f03e9870730904fbcc1116018ab1b5b1a9045b2afe6e"
+  # 项目总群webhook
+  PROJECT_GROUP_HOOK: "https://oapi.dingtalk.com/robot/send?access_token=532ac422e5f1afbea1bbaf7b5937ed8f846829f42ecdb547325acf3b0ffd44aa"
+  # 预生产请求参数
+  REQUEST_PARAM_PRODUCT: '{ "msgtype": "text", "text": { "content": "疫情防控前端项目已发布至预生产环境！\n 提交信息：$CI_COMMIT_MESSAGE" }, "at": { "atMobiles": [ "15625085251" ], "isAtAll": false }}'
+  # 政务云请求参数
+  REQUEST_PARAM_ZWY: '{ "msgtype": "text", "text": { "content": "疫情防控前端项目已发布至政务云环境！\n 提交信息：$CI_COMMIT_MESSAGE" }, "at": { "isAtAll": true }}'
+
+stages:
+  - build
+  - deploy
+  - product
+prepare:
+  stage: build
+  script:
+    - npm set progress=false
+    - npm config set sass_binary_site https://npmmirror.com/mirrors/node-sass
+    - npm ci --prefer-offline --registry http://192.168.1.106:4873
+    - npm run build
+    # 把静态资源拷贝到打包文件中
+    - cp -r static/* dist
+    #修改镜像名称
+    - remoteTagName="192.168.1.124:5000/yqfk-pc-frontend:$CI_COMMIT_SHA"
+    #修改镜像名称
+    - latestTag="192.168.1.124:5000/yqfk-pc-frontend:latest"
+    - zwyTag="register:5000/yqfk-pc-frontend:$CI_COMMIT_SHA"
+    - docker build -f ./Dockerfile/Dockerfile -t $remoteTagName -t $latestTag -t $zwyTag .
+    - docker push $remoteTagName
+    - docker push $latestTag
+  tags:
+    - master
+  only:
+    - master
+    - release
+
+deploy_k8s_dev:
+  stage: deploy
+  tags:
+    - master
+  only:
+    - master
+  script:
+    - K8SCONFIGPATH=$(initK8sConfig  "$KUBE_CONFIG"  $HOME/.kube)
+    - updateImage  svc-yqfk-pc-frontend 192.168.1.124:5000/yqfk-pc-frontend:$CI_COMMIT_SHA develop
+
+deploy_k8s_product:
+  stage: product
+  tags:
+    - master
+  only:
+    - master
+  script:
+    - K8SCONFIGPATH=$(initK8sConfig  "$KUBE_CONFIG_PRO"  $HOME/.kube_pro)
+    - updateImage  svc-yqfk-pc-frontend 192.168.1.124:5000/yqfk-pc-frontend:$CI_COMMIT_SHA dn
+  after_script:
+    - 'curl -H "Content-type: application/json" -d "$REQUEST_PARAM_PRODUCT" "$BUILD_PUBLISH_GRUOP_HOOK"'
+
+deploy_k8s_zwy:
+  stage: product
+  when: manual
+  tags:
+    - master
+  script:
+    - zwyTag="register:5000/yqfk-pc-frontend:$CI_COMMIT_SHA"
+    - docker push $zwyTag
+    - K8SCONFIGPATH=$(initK8sConfig  "$KUBE_CONFIG_ZWY"  $HOME/.kube_zwy)
+    - updateImage  svc-yqfk-pc-frontend $zwyTag dn
+  after_script:
+    - 'curl -H "Content-type: application/json" -d "$REQUEST_PARAM_ZWY" "$PROJECT_GROUP_HOOK"'

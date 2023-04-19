@@ -1,0 +1,227 @@
+.p-edit-epidemiological-survey {
+  margin: 10px;
+  padding: 24px 35px;
+  background: #fff;
+  min-height: 875px;
+  &-header {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    .el-dialog__headerbtn{
+      font-size: 24px;
+    }
+  }
+  &-form {
+    display: flex;
+    flex-wrap: wrap;
+    > div {
+      flex: 0 0 50%;
+    }
+  }
+  &-basic {
+    position: relative;
+  }
+  &-input {
+    .el-input__inner {
+      width: 409px;
+    }
+    @media screen and(max-width: 1000px) {
+      .el-input__inner {
+        width: 120px;
+      }
+    }
+  }
+  &-voices {
+    max-height: 200px;
+    overflow: auto;
+  }
+  &-voice {
+    cursor: pointer;
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    position: relative;
+    background: url(~@/assets/image/epidemiologicalSurvey/icon-voice.png)
+      no-repeat center center / contain;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-top: 8px;
+    &__playing {
+      background: url(~@/assets/image/epidemiologicalSurvey/icon-voice__playing.gif)
+        no-repeat center center / contain;
+    }
+    &-wrapper {
+      display: flex;
+    }
+  }
+  &-chat {
+    margin-top: 6px;
+    padding: 10px 8px;
+    background: #9eea6a;
+    height: fit-content;
+    line-height: 1.15;
+    border-radius: 4px;
+    position: relative;
+    width: fit-content;
+    min-height: 15px;
+    min-width: 20px;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: -14px;
+      top: calc(50% - 8px);
+      width: 0;
+      height: 0;
+      border: 8px solid transparent;
+      border-right: 8px solid #9eea6a;
+    }
+  }
+  &-gallery {
+    margin: 10px;
+    padding: 24px 35px;
+    &-header {
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  }
+  &-image {
+    width: 228px;
+    height: 146px;
+    margin: 0 20px;
+  }
+  &-images {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  &-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  &-trajectory {
+    margin: 10px;
+    &-info {
+      margin-bottom: 8px;
+      &-time {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &-bottom {
+      display: flex;
+    }
+    &-subject {
+      flex: auto;
+    }
+    &-aside {
+      flex: none;
+    }
+    &-audios {
+      display: flex;
+      margin-bottom: 10px;
+      > section:first-child {
+        display: flex;
+        flex: auto;
+      }
+      justify-content: space-between;
+    }
+    &-audio {
+      display: inline-block;
+      width: 31px;
+      height: 31px;
+      margin-top: 6px;
+      margin-right: 20px;
+      background: url(~@/assets/image/epidemiologicalSurvey/icon-voice.png)
+        no-repeat center center / contain;
+      cursor: pointer;
+      &__playing {
+        background: url(~@/assets/image/epidemiologicalSurvey/icon-voice__playing.gif)
+          no-repeat center center / contain;
+      }
+    }
+    &-place {
+      margin-left: 10px;
+      width: 110px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      color: #409eff;
+      flex: none;
+      border: 1px solid rgba(64, 158, 255, 1);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+  .p-edit-epidemiological-survey-body {
+    margin-top: 20px;
+    &-add {
+      box-sizing: border-box;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #409eff;
+      border: 1px solid #409eff;
+      height: 51px;
+      line-height: 51px;
+    }
+    &-header {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid rgb(249, 249, 249);
+      line-height: 2.6;
+    }
+    &-content {
+      padding: 10px;
+      width: 414px;
+    }
+    &-list {
+      max-height: 442px;
+      overflow-y: auto;
+    }
+    &-item {
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      border-bottom: 1px solid rgb(249, 249, 249);
+      padding: 20px 120px 20px 20px;
+      background: rgba(245, 245, 245, 1);
+      position: relative;
+      &__highlight {
+        border: 1px solid #409eff;
+        background: #f4f9ff;
+      }
+    }
+    &-delete {
+      position: absolute;
+      right: 10px;
+      top: 20px;
+    }
+    > section {
+      cursor: default;
+    }
+  }
+  &-key-places {
+    max-height: 442px;
+    overflow: auto;
+  }
+  &-key-place {
+    box-sizing: border-box;
+    padding: 16px 20px;
+    height: 197px;
+    line-height: 2;
+    background-color: rgba(245, 245, 245, 0.66);
+    border-radius: 4px;
+    color: #333;
+    margin-bottom: 10px;
+    &-operation {
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+}

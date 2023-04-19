@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>视频直播 liveplayer</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+  <style type="text/css">
+    html,body{margin: 0;padding:0;overflow: hidden;}
+  </style>
+</head>
+<body>
+
+<live-player id="player01"  live="false" stretch="false" loading.sync="false" alt="正在获取视频流地址..." show-custom-button="false" autoplay aspect="fullscreen" muted timeout="60"></live-player>
+
+<script type="text/javascript" src="liveplayer-element.min.js"></script>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script>
+  window.onload = function () {
+
+    var params = getParams()
+
+    if(params.deviceUid){
+    //指定设备视频
+
+      if(params.width && params.height){
+        document.getElementById('player01').setAttribute('aspect', `${params.width}:${params.height}`)
+      }
+
+      let url = `/szg/web/videox?deviceUid=${params.deviceUid}&url=`+ encodeURIComponent(`${params.videoUrl}`)
+
+      $.get(url,function(res){
+        if (res.code === 1) {
+          let playUrl = res.data.playUrl
+          document.getElementById('player01').setAttribute('video-url', playUrl)
+        }
+      })
+
+    } else {
+      //静态视频播放器
+      var player = document.getElementById('player01').setAttribute('video-url', params.videoUrl)
+    }
+
+  }
+
+  window.addEventListener("message", function (event) {
+    var data = event.data;
+    switch (data.cmd) {
+      case 'switchUrl':
+        var player = document.getElementById('player01');
+        player.setAttribute("video-url", data.params["path"]);
+        if (data.params['live']) {
+          player.setAttribute('live', true);
+        } else {
+          player.setAttribute('live', false);
+        }
+        break;
+    }
+  })
+
+  function getParams() {
+    var arr = location.search.substring(1).split(/\&/ig)
+    var res = []
+    arr.forEach(item => {
+      var info = item.split('=')
+      res[info[0]] = info.slice(1, info.length).join('=') || null
+    })
+    return res
+  }
+</script>
+</body>
+</html>

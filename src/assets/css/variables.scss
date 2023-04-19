@@ -1,0 +1,25 @@
+//主体色
+$theme-color: #4170f2;
+$theme-color2: #2f89ef;
+$theme-color_deep: #375dca;
+
+$bw: -2px;
+
+@mixin adaptBox($bgColor){
+  content:'';
+  position: absolute;
+  top: $bw;
+  left: $bw;
+  right: $bw;
+  bottom: $bw;
+  background-color: $bgColor;
+  z-index: 0;
+}
+
+//涉疫地区来南沙人员
+$btn_background_color: #345ef0;
+$btn_background_color_hover: #5376f1;
+$btn_background_color2: #1f3472;
+$btn_background_color_hover2: #31488d;
+$btn_border_color:#707070;
+$input_background_color:#3f60ad;

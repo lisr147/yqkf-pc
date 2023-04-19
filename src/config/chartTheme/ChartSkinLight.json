@@ -1,0 +1,39 @@
+{
+    "colorList": [
+        "#3971f0",
+        "#36c9af",
+        "#4db94d",
+        "#de8918",
+        "#37d7ff",
+        "#43baf2",
+        "#f35b5a",
+        "#ffca24"
+    ],
+    "textStyle": {
+        "color": "#888",
+        "seriesLabelColor": "#3971f0"
+    },
+    "lineColor":[
+        "#61a0a8",
+        "#f99"
+    ],
+    "markPointColor":[
+        "#f99",
+        "#eee"
+    ],
+    "markPointFontColor": [
+        "#fff",
+        "#333"
+    ],
+    "lineStyle": {
+        "color": "#999"
+    },
+    "modelPole": {
+        "desc": "灯杆模型主题",
+        "bg": "#b6c5cf"
+    },
+    "zhtz":{
+        "desc":"综合体征雷达图",
+        "radarNodeFill": "rgba(255,255, 255,1)"
+    }
+}

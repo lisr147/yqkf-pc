@@ -1,0 +1,37 @@
+/*css reset*/
+html,body,h1,h2,h3,h4,h5{ margin: 0;padding:0; color: #333;  font-family: 'Microsoft YaHei UI', Arial, sans-serif; font-size:14px; }
+body{  background-color: rgb(240, 242, 245); }
+ul,li{ margin:0; padding:0; list-style: none;}
+a{text-decoration: none; outline: none;}
+
+/*表单*/
+.el-form{
+  &--label-top {
+    &-item__label {
+      padding: 0;
+    }
+  }
+  .ele-form-btns{
+    .el-form-item__content{
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .el-form {
+    .el-button[type=submit] {
+      display: block;
+      margin-top: 2em;
+      padding: 12px 20px;
+      width: 100%;
+    }
+  }
+  .el-date-range-picker{
+    transform: scale(0.5) translateX(288px);
+  }
+}
+
+.el-message-box{
+  width: 320px !important;
+}

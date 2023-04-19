@@ -1,0 +1,63 @@
+[
+    {
+      "name": "龙穴街政务服务中心",
+      "englishName": "longxuejie",
+      "describe": "龙穴街政务服务中心",
+      "center": [113.671159, 22.642888]
+    },
+    {
+      "name": "万顷沙镇政务服务中心",
+      "englishName": "wanqingsha",
+      "describe": "万顷沙镇政务服务中心",
+      "center": [113.616227, 22.629896]
+    },
+    {
+      "name": "珠江街政务服务中心",
+      "englishName": "zhujiangjie",
+      "describe": "珠江街政务服务中心",
+      "center": [113.52559, 22.731897]
+    },
+    {
+      "name": "横沥镇政务服务中心",
+      "englishName": "hengli",
+      "describe": "横沥镇政务服务中心",
+      "center": [113.4946918500, 22.7486387100]
+    },
+    {
+      "name": "大岗镇政务服务中心",
+      "englishName": "dagang",
+      "describe": "大岗镇政务服务中心",
+      "center": [113.409265,22.778476]
+    },
+    {
+      "name": "榄核镇政务服务中心",
+      "englishName": "lanhe",
+      "describe": "榄核镇政务服务中心",
+      "center": [113.344315, 22.847743]
+    },
+    {
+      "name": "东涌镇政务服务中心",
+      "englishName": "dongchong",
+      "describe": "东涌镇政务服务中心",
+      "center": [113.455552, 22.883174]
+    },
+    {
+      "name": "黄阁镇政务服务中心",
+      "englishName": "huangge",
+      "describe": "黄阁镇政务服务中心",
+      "center": [113.537759,22.858624]
+    },
+    {
+      "name": "南沙街政务服务中心",
+      "englishName": "nanshajie",
+      "describe": "南沙街政务服务中心",
+      "center": [113.589645,22.781675]
+    },
+    {
+      "name": "南沙政务服务中心",
+      "englishName": "nanshaqurenminzhenfu",
+      "describe": "南沙政务服务中心",
+      "center": [113.53165,22.807865]
+    }
+]
+
